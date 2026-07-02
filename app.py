@@ -40,12 +40,20 @@ html, body, [class*="css"] {
 
 /* ── Hero header ── */
 .hero {
+<<<<<<< HEAD
     padding: 1rem 0 1rem;
+=======
+    padding: 2.5rem 0 1.5rem;
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
     text-align: center;
 }
 .hero h1 {
     font-family: var(--mono);
+<<<<<<< HEAD
     font-size: 2.2rem;
+=======
+    font-size: 2.4rem;
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
     letter-spacing: -1px;
     background: linear-gradient(135deg, var(--accent), var(--accent2));
     -webkit-background-clip: text;
@@ -54,8 +62,13 @@ html, body, [class*="css"] {
 }
 .hero p {
     color: var(--muted);
+<<<<<<< HEAD
     font-size: 0.9rem;
     margin-top: 0.2rem;
+=======
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
     letter-spacing: 0.5px;
 }
 
@@ -64,15 +77,24 @@ html, body, [class*="css"] {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
+<<<<<<< HEAD
     padding: 1rem 1.5rem;
     margin-bottom: 1rem;
+=======
+    padding: 1.6rem 2rem;
+    margin-bottom: 2rem;
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
 }
 
 /* ── Step tracker ── */
 .steps-row {
     display: flex;
     gap: 0;
+<<<<<<< HEAD
     margin: 0.5rem 0 1rem 0;
+=======
+    margin: 1.6rem 0;
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid var(--border);
@@ -101,13 +123,22 @@ html, body, [class*="css"] {
 }
 .step-pill .icon { font-size: 1rem; display: block; margin-bottom: 2px; }
 
+<<<<<<< HEAD
 /* ── Output section cards (kept for compatibility, though using native tabs now) ── */
+=======
+/* ── Output section cards ── */
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
 .section-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
+<<<<<<< HEAD
     padding: 1rem 1.2rem;
     margin-bottom: 1rem;
+=======
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.2rem;
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
     transition: border-color .2s;
 }
 .section-card:hover { border-color: #2d3a55; }
@@ -117,7 +148,11 @@ html, body, [class*="css"] {
     letter-spacing: 1.2px;
     text-transform: uppercase;
     color: var(--accent);
+<<<<<<< HEAD
     margin-bottom: 0.5rem;
+=======
+    margin-bottom: 0.9rem;
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -132,7 +167,11 @@ html, body, [class*="css"] {
 }
 .section-body {
     font-size: 0.9rem;
+<<<<<<< HEAD
     line-height: 1.6;
+=======
+    line-height: 1.75;
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
     color: #c4cfe3;
     white-space: pre-wrap;
     word-break: break-word;
@@ -143,6 +182,7 @@ html, body, [class*="css"] {
 .section-card.critique .section-title { color: var(--accent2); }
 .section-card.critique .badge { background: rgba(167,139,250,.15); color: var(--accent2); }
 
+<<<<<<< HEAD
 /* ── Custom Tabs Styling ── */
 .stTabs [data-baseweb="tab-list"] {
     gap: 8px;
@@ -166,6 +206,8 @@ html, body, [class*="css"] {
     color: var(--accent) !important;
 }
 
+=======
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
 /* ── Streamlit widget overrides ── */
 .stTextInput > div > div > input {
     background: #0d1018 !important;
@@ -205,7 +247,11 @@ html, body, [class*="css"] {
 }
 
 /* ── Divider ── */
+<<<<<<< HEAD
 hr { border-color: var(--border) !important; margin: 1rem 0 !important; }
+=======
+hr { border-color: var(--border) !important; margin: 1.8rem 0 !important; }
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
 
 /* ── Toast-like status ── */
 .status-bar {
@@ -232,6 +278,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+<<<<<<< HEAD
 # ── Chat History Initialization ──
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -254,6 +301,22 @@ for msg in st.session_state.messages:
             st.markdown(msg.get("content", ""))
 
 # ── Step tracker helper ──
+=======
+# ── Input card ─────────────────────────────────────────────────────────────────
+st.markdown('<div class="input-card">', unsafe_allow_html=True)
+col1, col2 = st.columns([5, 1])
+with col1:
+    topic = st.text_input(
+        "Research topic",
+        placeholder="e.g. 'Agentic AI frameworks in 2025'",
+        label_visibility="collapsed",
+    )
+with col2:
+    run_btn = st.button("▶ Run", use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)
+
+# ── Step tracker helper ─────────────────────────────────────────────────────────
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
 STEPS = [
     ("🌐", "Search"),
     ("📄", "Reader"),
@@ -269,6 +332,7 @@ def render_steps(active: int):
         pills += f'<div class="step-pill {cls}"><span class="icon">{icon if i >= active else "✓"}</span>{label}</div>'
     st.markdown(f'<div class="steps-row">{pills}</div>', unsafe_allow_html=True)
 
+<<<<<<< HEAD
 # ── Chat Input & Pipeline Execution ──
 if prompt := st.chat_input("Enter a research topic or follow-up question..."):
     # Append user message
@@ -292,15 +356,54 @@ if prompt := st.chat_input("Enter a research topic or follow-up question..."):
             from pipeline import research_pipeline
             def show_status(msg):
                 status_placeholder.markdown(f'<div class="status-bar">⚡ {msg}</div>', unsafe_allow_html=True)
+=======
+def render_section(title, badge, content, extra_class=""):
+    st.markdown(f"""
+    <div class="section-card {extra_class}">
+        <div class="section-title">{title} <span class="badge">{badge}</span></div>
+        <div class="section-body">{content}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+# ── Pipeline execution ──────────────────────────────────────────────────────────
+if run_btn:
+    if not topic.strip():
+        st.warning("Please enter a research topic first.")
+    else:
+        step_placeholder = st.empty()
+        progress_bar = st.progress(0)
+        status_placeholder = st.empty()
+
+        results = {}
+
+        try:
+            from pipeline import research_pipeline
+
+            # We wrap each stage with UI updates by monkey-patching
+            # via a staged approach — call pipeline but capture state incrementally.
+
+            # Stage indicators
+            def show_status(msg):
+                status_placeholder.markdown(
+                    f'<div class="status-bar">⚡ {msg}</div>', unsafe_allow_html=True
+                )
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
 
             with step_placeholder.container():
                 render_steps(0)
             show_status("Search agent is scouring the web…")
             progress_bar.progress(10)
 
+<<<<<<< HEAD
             # Run full pipeline
             state = research_pipeline(prompt, chat_history=chat_history)
 
+=======
+            # Run full pipeline (blocking)
+            state = research_pipeline(topic)
+
+            # Animate step progression after result (since pipeline is synchronous)
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
             for i in range(1, 5):
                 with step_placeholder.container():
                     render_steps(i)
@@ -309,6 +412,7 @@ if prompt := st.chat_input("Enter a research topic or follow-up question..."):
 
             status_placeholder.empty()
             progress_bar.empty()
+<<<<<<< HEAD
             step_placeholder.empty()
 
             tab1, tab2, tab3, tab4 = st.tabs(["🌐 Search Results", "📄 Scraped Content", "✍️ Generated Report", "🔍 Critique"])
@@ -324,3 +428,40 @@ if prompt := st.chat_input("Enter a research topic or follow-up question..."):
 
         except Exception as e:
             st.error(f"Pipeline error: {e}")
+=======
+
+            st.markdown("---")
+            st.markdown(
+                '<p style="font-family:\'Space Mono\',monospace;font-size:0.75rem;'
+                'color:#64748b;letter-spacing:1px;text-transform:uppercase;margin-bottom:1rem;">'
+                f'Results · {topic}</p>',
+                unsafe_allow_html=True,
+            )
+
+            render_section("🌐 Search Results", "AGENT 1", state.get("search_results", "—"))
+            render_section("📄 Scraped & Summarized Content", "AGENT 2", state.get("scraped_content", "—"))
+            render_section("✍️ Generated Report", "WRITER CHAIN", state.get("report", "—"))
+            render_section("🔍 Critique", "CRITIC CHAIN", state.get("critique", "—"), extra_class="critique")
+
+        except ImportError as e:
+            step_placeholder.empty()
+            progress_bar.empty()
+            status_placeholder.empty()
+            st.error(f"Could not import pipeline: {e}")
+        except Exception as e:
+            step_placeholder.empty()
+            progress_bar.empty()
+            status_placeholder.empty()
+            st.error(f"Pipeline error: {e}")
+
+# ── Empty state ────────────────────────────────────────────────────────────────
+else:
+    st.markdown("""
+    <div style="text-align:center;padding:3rem 0;color:#2d3a55;">
+        <div style="font-size:3rem;margin-bottom:1rem;">⬆</div>
+        <p style="font-family:'Space Mono',monospace;font-size:0.8rem;letter-spacing:1px;">
+            ENTER A TOPIC AND HIT RUN
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+>>>>>>> a3e35a63d7a3930343af923c1b88e842743a5533
