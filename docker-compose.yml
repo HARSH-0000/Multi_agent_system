@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    environment:
+      # You can define environment variables directly here or in .env
+      # OPENAI_API_KEY: your_api_key_here
+      # OPENAI_BASE_URL: https://api.your-provider.com/v1 # Optional: if using a custom endpoint for z-ai/glm-5.1
+      # TAVILY_API_KEY: your_tavily_key
+      - PYTHONUNBUFFERED=1
